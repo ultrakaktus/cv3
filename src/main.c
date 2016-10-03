@@ -97,9 +97,10 @@ int main(void)
 	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
 	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
 	  */
-	  //BUTTON = !GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
-	  for(i=0;i<0xFFFF;i++);
-	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
+	  BUTTON = !GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
+	  /*for(i=0;i<0xFFFF;i++);
+	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);*/
+	  GPIO_WriteBit(GPIOA, GPIO_Pin_5, BUTTON);
 
 
   }
