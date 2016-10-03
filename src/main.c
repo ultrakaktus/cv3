@@ -76,7 +76,14 @@ int main(void)
   /* Infinite loop */
   while (1)
   {
-	i++;
+	  GPIO_SetBits(GPIOA, GPIO_Pin_5);
+	  GPIO_ResetBits(GPIOA, GPIO_Pin_5);
+	  GPIO_WriteBit(GPIOA, GPIO_Pin_5, ENABLE);
+	  GPIO_WriteBit(GPIOA, GPIO_Pin_5, DISABLE);
+	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
+	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
+	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
+	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
   }
   return 0;
 }
