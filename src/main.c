@@ -100,7 +100,16 @@ int main(void)
 	  BUTTON = !GPIO_ReadInputDataBit(GPIOC, GPIO_Pin_13);
 	  /*for(i=0;i<0xFFFF;i++);
 	  GPIO_ToggleBits(GPIOA, GPIO_Pin_5);*/
-	  GPIO_WriteBit(GPIOA, GPIO_Pin_5, BUTTON);
+	  //GPIO_WriteBit(GPIOA, GPIO_Pin_5, BUTTON);
+	  if(BUTTON == 1 && old == 0){
+	  		for(i=0;i<0xFFF;i++);
+	  		old = 1;
+	  	}
+	  	if(BUTTON == 0 && old == 1){
+	  		GPIO_ToggleBits(GPIOA, GPIO_Pin_5);
+	  		for(i=0;i<0xFFF;i++);
+	  		old = 0;
+	  	}
 
 
   }
